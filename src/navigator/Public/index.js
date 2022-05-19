@@ -1,5 +1,6 @@
 import React from "react";
 import WelcomeController from "../../containers/Welcome/Welcome.controller";
+import RegisterController from "../../containers/Register/Register.controller";
 import { createStackNavigator } from "@react-navigation/stack";
 import routes from "./routes";
 
@@ -14,7 +15,7 @@ const PublicNavigator = () => {
     <Navigator
       gestureEnabled={false}
       screenOptions={{
-        animationEnabled: false,
+        animationEnabled: true,
         keyboardHandlingEnabled: false,
       }}
     >
@@ -23,8 +24,11 @@ const PublicNavigator = () => {
         component={WelcomeController}
         {...optionsDefault}
       />
-
-      {/* <Screen name="SignIn" component={SignInController} {...optionsDefault} /> */}
+      <Screen
+        name="Register"
+        component={RegisterController}
+        {...optionsDefault}
+      />
 
       {/* {routes.map((route, index) => (
         <Screen

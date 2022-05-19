@@ -6,7 +6,7 @@ const Input = (props) => {
   const {
     onChangeText = () => {},
     value,
-    placeholderTextColor = colors.grayDark,
+    placeholderTextColor = colors.grayLighter,
     placeholder,
     secureTextEntry = false,
     autoCapitalize = "none",

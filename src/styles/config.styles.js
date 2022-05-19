@@ -8,8 +8,8 @@ export const colorsStyles = {
   primaryDark: "#10172C",
   primaryDefault: "#293B70",
 
-  secondaryDefault: "#F06F93",
-  secondaryDark: "#783749",
+  secondaryDefault: "#97001b",
+  secondaryDark: "#3C000A",
 
   grayDark: "#BBC3CF",
   grayMedium: "#CACFDA",

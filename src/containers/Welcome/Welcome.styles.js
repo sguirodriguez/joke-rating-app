@@ -1,5 +1,10 @@
 import { StyleSheet } from "react-native";
-import { colorsStyles, fontDynamic, fonts } from "../../styles/config.styles";
+import {
+  colorsStyles,
+  fontDynamic,
+  fonts,
+  wp,
+} from "../../styles/config.styles";
 
 export const colors = colorsStyles;
 
@@ -34,7 +39,6 @@ const styles = StyleSheet.create({
   register: {
     flex: 1,
     display: "flex",
-    flexWrap: "no-wrap",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
@@ -42,9 +46,27 @@ const styles = StyleSheet.create({
   title: {
     color: colors.white,
     fontSize: fontDynamic(fonts.medium),
+    fontWeight: "bold",
   },
   marginHorizontal: {
     marginTop: "2%",
+  },
+  buttonRegister: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.secondaryDefault,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
 });
 

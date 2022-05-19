@@ -1,22 +1,29 @@
 import { StyleSheet } from "react-native";
 import { colorsStyles, fontDynamic, fonts } from "../../styles/config.styles";
 
-const colors = colorsStyles;
+export const colors = colorsStyles;
 
 const styles = StyleSheet.create({
-  button: {
-    alignItems: "center",
-    backgroundColor: colors.primaryDefault,
-    width: 200,
-    height: 50,
-    borderRadius: 10,
+  container: {
+    flex: 1,
+    backgroundColor: colors.secondaryDark,
+    padding: "6%",
+  },
+  header: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
-  text: {
+  body: {
+    flex: 2,
+  },
+  title: {
     color: colors.white,
     fontSize: fontDynamic(fonts.medium),
     fontWeight: "bold",
+  },
+  marginHorizontal: {
+    marginTop: "2%",
   },
 });
 

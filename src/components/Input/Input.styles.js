@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
     borderBottomWidth: 1,
-    borderBottomColor: colors.grayDark,
+    borderBottomColor: colors.grayLighter,
   },
 });
 

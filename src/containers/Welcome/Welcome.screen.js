@@ -1,12 +1,14 @@
 import React from "react";
-import { View, Image, Text, ScrollView } from "react-native";
+import { View, Image, Text, TouchableOpacity } from "react-native";
 import styles, { colors } from "./Welcome.styles";
-import { Fontisto, Ionicons } from "@expo/vector-icons";
+import { Fontisto, AntDesign } from "@expo/vector-icons";
 import Input from "../../components/Input/Input.components";
 import Button from "../../components/Button/Button.components";
+import { useNavigation } from "@react-navigation/native";
 
 const WelcomeScreen = ({ handlers }) => {
   const { email, setEmail, password, setPassword } = handlers;
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image
@@ -28,14 +30,14 @@ const WelcomeScreen = ({ handlers }) => {
               placeholder="Email"
               value={email}
               onChangeText={(value) => setEmail(value)}
-              style={{ width: "100%" }}
+              style={{ width: "100%", color: colors.white }}
             />
             <Input
               placeholder="Senha"
               value={password}
               secureTextEntry={true}
               onChangeText={(value) => setPassword(value)}
-              style={{ width: "100%" }}
+              style={{ width: "100%", color: colors.white }}
             />
             <View style={styles.marginHorizontal} />
             <View style={styles.marginHorizontal} />
@@ -50,11 +52,12 @@ const WelcomeScreen = ({ handlers }) => {
               Não possue conta?
             </Text>
 
-            <Ionicons
-              name="add-circle-outline"
-              size={45}
-              color={colors.secondaryDefault}
-            />
+            <TouchableOpacity
+              style={styles.buttonRegister}
+              onPress={() => navigation.navigate("Register")}
+            >
+              <AntDesign name="plus" size={30} color="white" />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
