@@ -1,4 +1,8 @@
 import { Dimensions, StatusBar, Platform } from "react-native";
+import {
+  heightPercentageToDP,
+  widthPercentageToDP,
+} from "react-native-responsive-screen";
 
 export const colorsStyles = {
   primaryDark: "#10172C",
@@ -17,13 +21,15 @@ export const colorsStyles = {
   black: "#000",
   transparent: "transparent",
 };
+export const wp = widthPercentageToDP;
+export const hp = heightPercentageToDP;
 
 export const fonts = {
-  highLarge: 20,
-  large: 18,
-  regular: 16,
-  medium: 14,
-  small: 12,
+  highLarge: 18,
+  large: 16,
+  regular: 14,
+  medium: 12,
+  small: 10,
 };
 
 const X_WIDTH = 375;
@@ -47,3 +53,17 @@ export const StatusBarHeight = Platform.select({
 });
 
 export const isIos = Platform.OS === "ios";
+
+const standardLength = width > height ? width : height;
+const offset =
+  width > height ? 0 : Platform.OS === "ios" ? 78 : StatusBar.currentHeight;
+
+const deviceHeight =
+  isIPhoneX() || Platform.OS === "android"
+    ? standardLength - offset
+    : standardLength;
+
+export function fontDynamic(fontSize, standardScreenHeight = 610) {
+  const heightPercent = (fontSize * deviceHeight) / standardScreenHeight;
+  return Math.round(heightPercent);
+}

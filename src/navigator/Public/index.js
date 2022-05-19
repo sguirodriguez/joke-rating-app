@@ -13,8 +13,10 @@ const PublicNavigator = () => {
   return (
     <Navigator
       gestureEnabled={false}
-      screenOptions={{ animationEnabled: false }}
-      keyboardHandlingEnabled={false}
+      screenOptions={{
+        animationEnabled: false,
+        keyboardHandlingEnabled: false,
+      }}
     >
       <Screen
         name="Welcome"
