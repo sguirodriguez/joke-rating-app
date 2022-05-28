@@ -50,30 +50,6 @@ const ProfileNavigator = () => {
   );
 };
 
-const { Navigator: BottomNavigator, Screen: BottomScreen } =
-  createBottomTabNavigator();
-
-const PrivateNavigator = () => {
-  return (
-    <BottomNavigator
-      initialRouteName="Home"
-      tabBar={(props) => <TabBar {...props} />}
-      TabBarTop={{ showLabel: false }}
-    >
-      <BottomScreen
-        options={{ headerShown: false }}
-        name="Home"
-        component={HomeNavigator}
-      />
-      <BottomScreen
-        options={{ headerShown: false }}
-        name="Profile"
-        component={ProfileNavigator}
-      />
-    </BottomNavigator>
-  );
-};
-
 const handleIcon = (routeName, isFocused) => {
   const iconTranslator = {
     Profile: (
@@ -137,6 +113,7 @@ function TabBar({ state, descriptors, navigation }) {
 
         return (
           <TouchableOpacity
+            key={index}
             accessibilityRole="button"
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -152,5 +129,29 @@ function TabBar({ state, descriptors, navigation }) {
     </View>
   );
 }
+
+const { Navigator: BottomNavigator, Screen: BottomScreen } =
+  createBottomTabNavigator();
+
+const PrivateNavigator = () => {
+  return (
+    <BottomNavigator
+      initialRouteName="Home"
+      tabBar={(props) => <TabBar {...props} />}
+      TabBarTop={{ showLabel: false }}
+    >
+      <BottomScreen
+        options={{ headerShown: false }}
+        name="Home"
+        component={HomeNavigator}
+      />
+      <BottomScreen
+        options={{ headerShown: false }}
+        name="Profile"
+        component={ProfileNavigator}
+      />
+    </BottomNavigator>
+  );
+};
 
 export default PrivateNavigator;
